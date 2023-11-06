@@ -1,0 +1,313 @@
+body { 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  width: 250px;
+  height: 100%;
+  background-color: #3498db;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+
+#menu a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.4s;
+}
+
+#menu a:hover {
+  background-color: #f392eb8a;
+  transform: scale(0.9);
+}
+
+#conteudo {
+  margin-left: 250px;  
+  padding: 20px;
+}
+
+#logo {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#logo a {
+  color: #333;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+#logo a:hover {
+  color: #555;
+}
+
+.container {
+  background-color: #ffffff;
+  margin-inline: initial;
+  padding-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.caixa {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+ 
+}
+
+.azul {
+  background-color: #3498db;
+  color: white;
+}
+
+#barrapesquisar {
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 80%; /* Adicionei largura para a pesquisa ocupar 80% da tela */
+}
+
+
+#export-excel {
+  font-size: 16px; 
+  margin-left: 500px;
+  padding: 13px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 16px;
+  
+  
+}
+
+#img-excel{
+  margin-left: 7px;
+  margin-bottom: -2px;
+  border-color: #3498db;
+}
+
+
+
+.list {
+  border-collapse: collapse;
+  margin-top: 20px;
+  width: 100%; /* A tabela ocupará toda a largura disponível */
+}
+
+
+.list th,
+.list td {
+  padding: 10px;
+  text-align: center;  
+}
+
+#export-excel{
+  margin-left: 20px;
+}
+
+.list td{
+  border: 2px solid #f8f8f8; 
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);  
+  text-align: center;  
+   
+  max-width: 180px;
+  overflow-wrap: break-word;
+}
+
+.list th {
+  border: 2px solid #cccccc2d;
+  background-color: #3498db;
+  color: white;
+}
+
+.list tr:nth-child(even) {
+  background-color: #fadcf27d;
+}
+
+
+
+.pagination {
+  
+  margin-top: 20px;
+  margin-left: 600px;
+  margin-bottom: 15px;
+ 
+}
+
+#previousPage,
+#nextPage {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.466);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal {
+  background-color: rgb(255, 255, 255);
+  margin-left: 150px;
+  padding: 10px ;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.logo {  
+display: block; 
+margin: 20px auto;
+max-width: 200px;
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+textarea{
+  font-family: "Arial", Helvetica, sans-serif;  
+}
+
+input[type="text"],
+textarea {
+  width: 90%;
+  padding: 15px;
+  margin-bottom: 2px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #3498db;
+  margin-right: 5px;
+}
+
+#campoInfoSigilosa {
+  display: none;
+}
+
+.list tr.selected {
+  background-color: #f0e68c;
+}
+
+#previousPage:hover,
+#nextPage:hover {
+  background-color: #3498db;
+}
+
+#previousPage:disabled,
+#nextPage:disabled {
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+#btnsalvar{
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  
+}
+
+.active {
+  display: flex;
+}
+
+.active .modal {
+  animation: modal 0.5s;
+}
+
+h1 { 
+  margin-left: 630px;  
+  font-size: 35px;  
+  height: 30px;
+}
+
+.header #new {
+  background-color: rgba(36, 54, 251, 0.313);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+h2 {
+  text-align: center;
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+}
+
+

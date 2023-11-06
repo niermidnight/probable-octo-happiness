@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTES</title>
+    <link rel="stylesheet" href="PARTE05.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,600&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Menu do Erick -->
+    <div id="menu">
+        <div id="logo">
+            <img src="Brasao_Governo_branco_500.png" width="150" alt="logo-aqui">
+        </div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="PARTE05.html">Cadastro</a>
+        </nav>
+
+    </div>
+    <!-- Fim do Menu do Erick -->
+
+
+    <div id="conteudo">
+        <div class="container">
+            <div class="header">
+                <div id="caixa_pesquisar" class="caixa azul">
+                    <button onclick="openmodal()" id="new">+<i></i></button>
+                    <input type="text" id="barrapesquisar" placeholder="Pesquisar..." />
+                    <button id="export-excel" onclick="exportTableToExcel('employeeList', 'Cátalogo de Sistemas')">Exportar Excel</button>
+                    
+
+                </div>
+            </div>
+            <h1>Catálago de Sistemas</h1>
+            <div id="divtable">
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Nome do Software</th>
+                            <th>Versão</th>
+                            <th>Finalidade</th>
+                            <th>Principais Informações</th>
+                            <th>Funcionalidades</th>
+                            <th>Acessa via Web?</th>
+                            <th>Possui Informação Sigilosa?</th>
+                            <th>Qual Informação Sigilosa?</th>
+                            <th id="id1">Editar </th>
+                            <th id="id2">Excluir
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultado">
+                        <tr>
+                            <td class="box"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!---->
+        <div class="pagination">
+            <button id="previousPage">Anterior</button><span id="currentPage">Página 1 de 1</span><button
+                id="nextPage">Próximo</button>
+        </div>
+        <div class="modal-container">
+            <div class="modal">
+                <h2>Catálago de Sistemas</h2>
+                <a href="PARTE05.html" class="button">x</a>
+                <img src="/Brasao_Governo_colorido_500.png" alt="brasao" class="logo">
+                <form action="#">
+                    <label for="nome">Nome do Software:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="versao">Versão:</label>
+                    <input type="text" id="versao" name="versao" required>
+
+                    <label for="finalidade">Finalidade:</label>
+                    <textarea type="text" id="finalidade" name="finalidade" required></textarea>
+
+                    <label for="info">Principais Informações:</label>
+                    <textarea id="info" name="info" required></textarea>
+
+                    <label for="func">Funcionalidades:</label>
+                    <textarea id="func" name="func" required></textarea>
+
+                    <label for="acessaWeb">Acessa via Web?</label>
+                    <input type="radio" id="simAcessaWeb" name="simAcessaWeb" value="Sim">Sim
+                    <input type="radio" id="naoAcessaWeb" name="naoAcessaWeb" value="Não">Não
+                    <br>
+                    <label for="informacaoSigilosa">Possui Informação Sigilosa?</label>
+                    <input type="radio" id="simInfoSigilosa" name="simInfoSigilosa" value="Sim"
+                        onclick="mostrarCampoSigiloso()">Sim
+                    <input type="radio" id="naoInfoSigilosa" name="naoInfoSigilosa" value="Não" checked>Não
+                    <br>
+                    <div id="campoInfoSigilosa">
+                        <label for="qualInfoSigilosa">Qual Informação Sigilosa?</label>
+                        <input type="text" id="qualInfoSigilosa" name="qualInfoSigilosa">
+                    </div>
+                    <input type="submit" id="btnsalvar" value="Cadastrar">
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function mostrarCampoSigiloso() {
+                const campoInfoSigilosa = document.getElementById("campoInfoSigilosa")
+                const qualInfoSigilosa = document.getElementById("qualInfoSigilosa")
+                const simInfoSigilosa = document.getElementById("simInfoSigilosa")
+
+                if (simInfoSigilosa.checked) {
+                    campoInfoSigilosa.style.display = "block"
+                    qualInfoSigilosa.required = true
+                }
+            }
+            function ocultarCampoSigiloso() {
+                const campoInfoSigilosa = document.getElementById("campoInfoSigilosa")
+                const qualInfoSigilosa = document.getElementById("qualInfoSigilosa")
+                const naoInfoSigilosa = document.getElementById("naoInfoSigilosa")
+                if (naoInfoSigilosa.checked) {
+                    campoInfoSigilosa.style.display = "none"
+                    qualInfoSigilosa.required = false
+                    qualInfoSigilosa.value = "Nenhuma";
+                }
+            }
+            document.getElementById("simInfoSigilosa").addEventListener("click", mostrarCampoSigiloso)
+            document.getElementById("naoInfoSigilosa").addEventListener("click", ocultarCampoSigiloso)
+        </script>
+        <script src="PARTE05.js"></script>
+        
+
+        <!--Biblioteca-->
+        <script type="text/javascript" src="https://unpkg.com/xlsx@0.18.0/dist/xlsx.full.min.js"></script>
+
+
+
+
+
+
+</body>
